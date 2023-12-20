@@ -18,8 +18,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Mutation } from "@tanstack/react-query";
 import { useState } from "react";
 import Link from "next/link";
-import { config } from "dotenv"
-config()
+require('dotenv').config()
 import OpenAI from 'openai';
 
 

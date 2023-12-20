@@ -5,6 +5,7 @@ import { trpc } from '@/utils/trpc';
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
+require('dotenv').config()
 
 import './TaskList.css';
 
@@ -50,6 +51,7 @@ function ShowTasks() {
           {tasks.map((task) => (
             <div key={task.task_id} className="task-card">
               <h2>{task.name}</h2>
+              {/* <h3>{process.env.NEXT_PUBLIC_NAME}</h3> */}
 
               <ul>
                 {task.steps.map((step, index) => (

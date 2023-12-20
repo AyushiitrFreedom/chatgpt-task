@@ -6,6 +6,8 @@ import { InsertStep, InsertTask, step, task } from '../db/schema/Schema';
 import { eq, inArray } from 'drizzle-orm';
 import { TRPCClientError } from '@trpc/client';
 import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const taskRouter = router({
     add: userProcedure.input(
@@ -17,6 +19,7 @@ export const taskRouter = router({
     ).mutation(async (opts) => {
         //checking for existing user
         try {
+            console.log(process.env.NAME + "or chacha kese ho")
             const newTask = async (t: InsertTask) => {
                 return db.insert(task).values(t);
             }
